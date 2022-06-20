@@ -24,9 +24,9 @@ A List of Network Interfaces
 
 Add the `balena-data-extractor` section of docker-compose.yml file in this repository to your own docker-compose file.
 
-## With a `run` command on a device:
+## With a `run` command on a device (not compatible with processes that require Balena Supervisor access):
 
-`balena run bcr.io/maggie0002/balena-data-extractor`
+`balena run bcr.io/maggie0002/balena-data-extractor -data networkinterfaces`
 
 # Advanced Usage
 
