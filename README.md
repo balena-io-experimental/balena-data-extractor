@@ -36,6 +36,7 @@ You can use a cmds.yaml file to generate your own commands to execute and pass t
 
 You can also set additional options by passing them in the Docker Compose command field or by putting them at the end of your `balena run` command:
 
+```
   -burn
         Burn all data after being read once
   -expire string
@@ -48,5 +49,6 @@ You can also set additional options by passing them in the Docker Compose comman
         Override the default data host with the passed URL
   -help
         Show this content
+```
 
 * Only the last 10000 lines of the JournalCtl logs are returned otherwise the browser struggles to decrypt it. 
