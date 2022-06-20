@@ -1,0 +1,13 @@
+version: "2.1"
+
+services:
+  balena-data-extractor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      PRIVATEBIN_URL: https://privatebin.net
+    restart: no
+    labels:
+      io.balena.features.supervisor-api: 1
+    # command: -data all
