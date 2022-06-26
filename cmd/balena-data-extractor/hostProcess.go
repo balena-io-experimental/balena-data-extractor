@@ -1,5 +1,7 @@
 package main
 
+import "log"
+
 type (
 	hostProcess struct {
 		api string
@@ -39,10 +41,10 @@ func (e Expiry) String() string {
 	case Month:
 		return "1month"
 	case Year:
-		println("Defaulting to 1 month, the maximum allowed.")
+		log.Println("Defaulting to 1 month, the maximum allowed.")
 		return "1month"
 	case Never:
-		println("Defaulting to 1 month, the maximum allowed.")
+		log.Println("Defaulting to 1 month, the maximum allowed.")
 		return "1month"
 	}
 	return ""

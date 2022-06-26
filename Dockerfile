@@ -6,7 +6,7 @@ WORKDIR /build
 
 COPY . .
 
-RUN go build -ldflags '-w -s'
+RUN make build
 
 
 FROM alpine:3.16
@@ -15,7 +15,7 @@ ENV PRIVATEBIN_URL=https://privatebin.net
 
 WORKDIR /app
 
-# COPY cmds.yaml cmds.yaml
+COPY cmds.yaml cmds.yaml
 
 COPY --from=builder /build/balena-data-extractor .
 
