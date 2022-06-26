@@ -9,7 +9,6 @@ import (
 
 var (
 	burnAfterRead bool
-	chosenLog     string
 	defaultURL    = os.Getenv("PRIVATEBIN_URL")
 	passedURL     string
 	password      string
@@ -22,7 +21,6 @@ func init() {
 	}
 
 	flag.BoolVar(&burnAfterRead, "burn", false, "Burn all data after being read once")
-	flag.StringVar(&chosenLog, "data", "all", "Choose which data to export. Options are: 'all', 'deviceinfo', 'envvars', 'journalctl', 'networkinterfaces', 'yaml')")
 	flag.StringVar(&password, "password", "", "Set a password for accessing the uploaded content")
 	flag.StringVar(&passedURL, "url", defaultURL, "Override the default data host with the passed URL")
 	flag.StringVar(&setExpiry, "expire", "day", "Delete all data after specified time. Options are: 'hour', 'day', 'week' or 'month'")
@@ -38,7 +36,7 @@ func init() {
 }
 
 func main() {
-	err := fetchLogs()
+	err := fetchData()
 	if err != nil {
 		panic(err)
 	}

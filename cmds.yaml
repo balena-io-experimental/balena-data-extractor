@@ -1,0 +1,25 @@
+jctl_logs:
+    name: JournalCtl Logs
+    cmd_type: api
+    url: /v2/journal-logs
+    payload: 
+        follow: "false"
+        count: "10000"
+    supervisor: true
+device_info:
+    name: Device Info
+    cmd_type: api
+    url: /v1/device
+    supervisor: true
+os_file:
+    name: OS Release Info
+    cmd_type: file
+    path: /etc/os-release
+network_interfaces:
+    name: Network Interfaces
+    cmd_type: shell
+    cmd: ifconfig
+env_vars:
+    name: Environment Variables
+    cmd_type: shell
+    cmd: printenv | grep -v API_KEY

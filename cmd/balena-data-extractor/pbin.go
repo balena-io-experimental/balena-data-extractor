@@ -280,12 +280,12 @@ func GetPaste(ur *url.URL) ([]byte, error) {
 	if v, ok := m["adata"]; !ok {
 		return nil, errors.New("missing adata")
 	} else {
-		nonceData, err := base64.RawStdEncoding.DecodeString(((v.([]interface{})[0]).([]interface{})[0]).(string)) // wtf
+		nonceData, err := base64.RawStdEncoding.DecodeString(((v.([]interface{})[0]).([]interface{})[0]).(string))
 		if err != nil {
 			return nil, err
 		}
 		copy(p.nonce[:], nonceData)
-		saltData, err := base64.RawStdEncoding.DecodeString(((v.([]interface{})[0]).([]interface{})[1]).(string)) // wtf
+		saltData, err := base64.RawStdEncoding.DecodeString(((v.([]interface{})[0]).([]interface{})[1]).(string))
 		if err != nil {
 			return nil, err
 		}
